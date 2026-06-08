@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <meta name="theme-color" content="#0f0f1a" />
+
+  <!-- ✅ SEO Meta Tags -->
+  <title>Nirbhay Calculator – All in One Calculator | निर्भय गौतम द्वारा</title>
+  <meta name="description" content="India's Premium All-in-One Calculator by Nirbhay Gautam. Basic, Scientific, EMI, GST, Age, Percentage, Currency & more. Fast, Free & Mobile Friendly." />
+  <meta name="keywords" content="calculator, scientific calculator, EMI calculator, GST calculator, age calculator, percentage calculator, nirbhay gautam, nirbhay calculator, online calculator india" />
+  <meta name="author" content="Nirbhay Gautam" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://nirbhaycalculator.in/" />
+
+  <!-- ✅ Open Graph (Facebook / Meta Ads) -->
+  <meta property="og:title" content="Nirbhay Calculator – All in One Calculator" />
+  <meta property="og:description" content="India's Premium All-in-One Calculator. Basic, Scientific, EMI, GST, Age & more. By Nirbhay Gautam." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://nirbhaycalculator.in/" />
+  <meta property="og:image" content="https://nirbhaycalculator.in/og-image.png" />
+  <meta property="og:locale" content="hi_IN" />
+  <meta property="og:site_name" content="Nirbhay Calculator" />
+
+  <!-- ✅ Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Nirbhay Calculator – All in One Calculator" />
+  <meta name="twitter:description" content="India's Premium Calculator by Nirbhay Gautam." />
+  <meta name="twitter:image" content="https://nirbhaycalculator.in/og-image.png" />
+
+  <!-- ✅ Google Site Verification — REPLACE with your actual code -->
+  <meta name="google-site-verification" content="APNI_VERIFICATION_CODE_YAHAN_DAALEN" />
+
+  <!-- ✅ Google AdSense — REPLACE with your Publisher ID -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+
+  <!-- ✅ Meta Pixel (Facebook Ads) — REPLACE with your Pixel ID -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'XXXXXXXXXXXXXXXXX'); // ← APNA META PIXEL ID YAHAN DAALEN
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXXXX&ev=PageView&noscript=1"/></noscript>
+
+  <!-- ✅ Structured Data (Schema.org) for Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Nirbhay Calculator",
+    "description": "India's Premium All-in-One Calculator by Nirbhay Gautam",
+    "url": "https://nirbhaycalculator.in/",
+    "applicationCategory": "Utility",
+    "operatingSystem": "Any",
+    "author": { "@type": "Person", "name": "Nirbhay Gautam" },
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Rajdhani:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #0b0b18;
+      --bg2: #12122a;
+      --card: #16162e;
+      --border: #2a2a50;
+      --accent: #00d4ff;
+      --accent2: #7c3aed;
+      --accent3: #f59e0b;
+      --green: #10b981;
+      --red: #ef4444;
+      --text: #e8e8f8;
+      --muted: #7a7a9a;
+      --btn-num: #1e1e40;
+      --btn-op: #1a1040;
+      --btn-eq: linear-gradient(135deg, #00d4ff, #7c3aed);
+      --btn-clear: #2a0a0a;
+      --display-bg: #080818;
+      --glow: 0 0 20px rgba(0,212,255,0.3);
+      --shadow: 0 8px 32px rgba(0,0,0,0.6);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Rajdhani', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ========== LOADING SCREEN ========== */
+    #loader {
+      position: fixed; inset: 0;
+      background: var(--bg);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+    }
+    .loader-logo {
+      font-family: 'Orbitron', monospace;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--accent);
+      text-shadow: var(--glow);
+      letter-spacing: 3px;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+    .loader-sub {
+      font-family: 'Noto Sans Devanagari', sans-serif;
+      color: var(--muted);
+      margin-top: 8px;
+      font-size: 0.9rem;
+    }
+    .loader-bar-wrap {
+      width: 220px; height: 4px;
+      background: var(--border);
+      border-radius: 4px;
+      margin-top: 24px;
+      overflow: hidden;
+    }
+    .loader-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      border-radius: 4px;
+      animation: loadBar 2s ease-in-out forwards;
+    }
+    @keyframes loadBar { from { width: 0% } to { width: 100% } }
+    @keyframes pulse { 0%,100% { opacity:1 } 50% { opacity:0.6 } }
+
+    /* ========== TOP AD BANNER ========== */
+    .ad-top {
+      width: 100%;
+      min-height: 70px;
+      background: var(--bg2);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+    }
+    .ad-placeholder {
+      width: 728px; max-width: 100%;
+      height: 90px;
+      background: linear-gradient(135deg, #1a1040, #0a0a20);
+      border: 1px dashed var(--border);
+      border-radius: 8px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      color: var(--muted);
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* ========== HEADER ========== */
+    .header {
+      text-align: center;
+      padding: 24px 16px 12px;
+      position: relative;
+    }
+    .header-title {
+      font-family: 'Orbitron', monospace;
+      font-size: clamp(1.4rem, 5vw, 2.2rem);
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--accent), var(--accent2), var(--accent3));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: 2px;
+    }
+    .header-sub {
+      font-family: 'Noto Sans Devanagari', sans-serif;
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-top: 4px;
+    }
+    .header-by {
+      font-size: 0.75rem;
+      color: var(--accent);
+      margin-top: 6px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* ========== TABS ========== */
+    .tabs-wrap {
+      padding: 0 12px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .tabs-wrap::-webkit-scrollbar { display: none; }
+    .tabs {
+      display: flex;
+      gap: 6px;
+      width: max-content;
+      margin: 0 auto;
+      padding: 4px 0 12px;
+    }
+    .tab {
+      padding: 8px 16px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      color: var(--muted);
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+      letter-spacing: 0.5px;
+    }
+    .tab:hover { border-color: var(--accent); color: var(--accent); }
+    .tab.active {
+      background: linear-gradient(135deg, rgba(0,212,255,0.15), rgba(124,58,237,0.15));
+      border-color: var(--accent);
+      color: var(--accent);
+      box-shadow: 0 0 12px rgba(0,212,255,0.2);
+    }
+
+    /* ========== MAIN CONTAINER ========== */
+    .main { padding: 0 12px 120px; max-width: 500px; margin: 0 auto; }
+
+    /* ========== CALC PANELS ========== */
+    .calc-panel { display: none; animation: fadeIn 0.3s ease; }
+    .calc-panel.active { display: block; }
+    @keyframes fadeIn { from { opacity:0; transform:translateY(8px) } to { opacity:1; transform:translateY(0) } }
+
+    /* ========== DISPLAY ========== */
+    .display {
+      background: var(--display-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px 20px;
+      margin-bottom: 12px;
+      min-height: 110px;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      box-shadow: inset 0 2px 12px rgba(0,0,0,0.5), var(--glow);
+      position: relative;
+      overflow: hidden;
+    }
+    .display::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+    }
+    .display-expr {
+      font-family: 'Orbitron', monospace;
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-align: right;
+      min-height: 20px;
+      word-break: break-all;
+    }
+    .display-val {
+      font-family: 'Orbitron', monospace;
+      font-size: clamp(1.8rem, 8vw, 2.8rem);
+      font-weight: 600;
+      color: var(--text);
+      text-align: right;
+      line-height: 1.1;
+      margin-top: 8px;
+      word-break: break-all;
+      transition: font-size 0.1s;
+    }
+    .display-mode-badge {
+      position: absolute; top: 10px; left: 14px;
+      font-size: 0.65rem;
+      color: var(--accent2);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    /* ========== BUTTONS ========== */
+    .btns {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
+    .btns.sci { grid-template-columns: repeat(4, 1fr); }
+
+    .btn {
+      height: 60px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      font-family: 'Orbitron', monospace;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.12s ease;
+      position: relative;
+      overflow: hidden;
+      letter-spacing: 0.5px;
+    }
+    .btn::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: white;
+      opacity: 0;
+      transition: opacity 0.15s;
+    }
+    .btn:active::after { opacity: 0.07; }
+    .btn:active { transform: scale(0.95); }
+
+    .btn-num { background: var(--btn-num); color: var(--text); }
+    .btn-num:hover { background: #252558; border-color: #3a3a70; }
+
+    .btn-op { background: var(--btn-op); color: var(--accent2); border-color: #3a1a70; font-size: 1.2rem; }
+    .btn-op:hover { background: #220f60; }
+
+    .btn-eq {
+      background: linear-gradient(135deg, #00aacc, #5a25b0);
+      color: white;
+      border: none;
+      box-shadow: 0 4px 16px rgba(0,212,255,0.3);
+      font-size: 1.3rem;
+    }
+    .btn-eq:hover { box-shadow: 0 4px 24px rgba(0,212,255,0.5); filter: brightness(1.1); }
+
+    .btn-clear { background: var(--btn-clear); color: var(--red); border-color: #500; font-size: 0.85rem; }
+    .btn-clear:hover { background: #3a0808; }
+
+    .btn-ac { background: #1a0808; color: #ff6b6b; border-color: #600; }
+    .btn-ac:hover { background: #2a0f0f; }
+
+    .btn-func { background: #0d1a30; color: var(--accent); border-color: #1a3060; font-size: 0.8rem; }
+    .btn-func:hover { background: #122040; }
+
+    .btn-span2 { grid-column: span 2; }
+    .btn-span3 { grid-column: span 3; }
+
+    /* ========== FORM CALCS (EMI, GST, etc.) ========== */
+    .form-calc {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+    }
+    .form-calc h3 {
+      font-family: 'Orbitron', monospace;
+      font-size: 0.9rem;
+      color: var(--accent);
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    .form-group { margin-bottom: 14px; }
+    .form-group label {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 6px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .form-group input, .form-group select {
+      width: 100%;
+      background: var(--display-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--text);
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1.1rem;
+      padding: 12px 14px;
+      outline: none;
+      transition: border-color 0.2s;
+      -webkit-appearance: none;
+    }
+    .form-group input:focus, .form-group select:focus { border-color: var(--accent); }
+    .form-group select option { background: #12122a; }
+
+    .calc-btn {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      border: none;
+      border-radius: 12px;
+      color: white;
+      font-family: 'Orbitron', monospace;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      letter-spacing: 1px;
+      margin-top: 6px;
+      box-shadow: 0 4px 16px rgba(0,212,255,0.25);
+      transition: all 0.2s;
+    }
+    .calc-btn:hover { filter: brightness(1.1); box-shadow: 0 4px 24px rgba(0,212,255,0.4); }
+    .calc-btn:active { transform: scale(0.98); }
+
+    .result-box {
+      background: var(--display-bg);
+      border: 1px solid var(--accent);
+      border-radius: 12px;
+      padding: 16px;
+      margin-top: 14px;
+      display: none;
+      box-shadow: var(--glow);
+    }
+    .result-box.show { display: block; animation: fadeIn 0.3s ease; }
+    .result-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 6px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .result-row:last-child { border-bottom: none; }
+    .result-label { color: var(--muted); font-size: 0.85rem; }
+    .result-value {
+      font-family: 'Orbitron', monospace;
+      color: var(--accent);
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    .result-value.big {
+      font-size: 1.3rem;
+      color: var(--green);
+    }
+
+    /* ========== HISTORY ========== */
+    .history-panel {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+    .history-panel::-webkit-scrollbar { width: 4px; }
+    .history-panel::-webkit-scrollbar-track { background: transparent; }
+    .history-panel::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+    .history-item {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+      transition: background 0.15s;
+      padding-left: 8px;
+      border-radius: 6px;
+    }
+    .history-item:hover { background: rgba(0,212,255,0.05); }
+    .history-item:last-child { border-bottom: none; }
+    .h-expr { font-size: 0.8rem; color: var(--muted); }
+    .h-result { font-family: 'Orbitron', monospace; font-size: 1rem; color: var(--accent); }
+    .no-history { text-align: center; color: var(--muted); padding: 24px; font-size: 0.85rem; }
+
+    /* ========== BOTTOM AD ========== */
+    .ad-bottom {
+      position: fixed; bottom: 0; left: 0; right: 0;
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      padding: 6px;
+      z-index: 100;
+    }
+    .ad-bottom .ad-placeholder { height: 60px; width: 320px; }
+
+    /* ========== FOOTER ========== */
+    .footer {
+      text-align: center;
+      padding: 20px 16px;
+      color: var(--muted);
+      font-size: 0.75rem;
+      line-height: 1.8;
+    }
+    .footer span {
+      font-family: 'Noto Sans Devanagari', sans-serif;
+      color: var(--accent);
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 380px) {
+      .btn { height: 52px; font-size: 0.9rem; }
+      .display-val { font-size: 1.6rem; }
+    }
+    @media (min-width: 500px) {
+      .btn { height: 68px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- LOADING SCREEN -->
+<div id="loader">
+  <div class="loader-logo">NIRBHAY CALC</div>
+  <div class="loader-sub">निर्भय गौतम द्वारा</div>
+  <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+</div>
+
+<!-- TOP AD (Google AdSense) -->
+<div class="ad-top">
+  <!-- ✅ Google AdSense Ad Unit — REPLACE data-ad-slot -->
+  <!--
+  <ins class="adsbygoogle"
+    style="display:inline-block;width:728px;height:90px"
+    data-ad-client="ca-pub-XXXXXXXXXXXXXXXXX"
+    data-ad-slot="XXXXXXXXXX"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  -->
+  <div class="ad-placeholder">📢 Advertisement • Google AdSense</div>
+</div>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-title">⚡ NIRBHAY CALC</div>
+  <div class="header-sub">All in One Calculator – India</div>
+  <div class="header-by">by Nirbhay Gautam · निर्भया द्वारा</div>
+</div>
+
+<!-- TABS -->
+<div class="tabs-wrap">
+  <div class="tabs">
+    <div class="tab active" onclick="switchTab('basic')">🔢 Basic</div>
+    <div class="tab" onclick="switchTab('scientific')">🧬 Scientific</div>
+    <div class="tab" onclick="switchTab('emi')">🏦 EMI</div>
+    <div class="tab" onclick="switchTab('gst')">📊 GST</div>
+    <div class="tab" onclick="switchTab('age')">🎂 Age</div>
+    <div class="tab" onclick="switchTab('percent')">% Percent</div>
+    <div class="tab" onclick="switchTab('bmi')">⚕️ BMI</div>
+    <div class="tab" onclick="switchTab('currency')">💱 Currency</div>
+    <div class="tab" onclick="switchTab('history')">📋 History</div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- ===== BASIC CALCULATOR ===== -->
+  <div class="calc-panel active" id="panel-basic">
+    <div class="display">
+      <div class="display-mode-badge">BASIC</div>
+      <div class="display-expr" id="basic-expr"></div>
+      <div class="display-val" id="basic-val">0</div>
+    </div>
+    <div class="btns" id="basic-btns">
+      <button class="btn btn-ac" onclick="bAC()">AC</button>
+      <button class="btn btn-clear" onclick="bDel()">⌫</button>
+      <button class="btn btn-op" onclick="bOp('%')">%</button>
+      <button class="btn btn-op" onclick="bOp('÷')">÷</button>
+
+      <button class="btn btn-num" onclick="bNum('7')">7</button>
+      <button class="btn btn-num" onclick="bNum('8')">8</button>
+      <button class="btn btn-num" onclick="bNum('9')">9</button>
+      <button class="btn btn-op" onclick="bOp('×')">×</button>
+
+      <button class="btn btn-num" onclick="bNum('4')">4</button>
+      <button class="btn btn-num" onclick="bNum('5')">5</button>
+      <button class="btn btn-num" onclick="bNum('6')">6</button>
+      <button class="btn btn-op" onclick="bOp('−')">−</button>
+
+      <button class="btn btn-num" onclick="bNum('1')">1</button>
+      <button class="btn btn-num" onclick="bNum('2')">2</button>
+      <button class="btn btn-num" onclick="bNum('3')">3</button>
+      <button class="btn btn-op" onclick="bOp('+')">+</button>
+
+      <button class="btn btn-num btn-span2" onclick="bNum('0')">0</button>
+      <button class="btn btn-num" onclick="bNum('.')">.</button>
+      <button class="btn btn-eq" onclick="bEqual()">=</button>
+    </div>
+  </div>
+
+  <!-- ===== SCIENTIFIC CALCULATOR ===== -->
+  <div class="calc-panel" id="panel-scientific">
+    <div class="display">
+      <div class="display-mode-badge">SCIENTIFIC</div>
+      <div class="display-expr" id="sci-expr"></div>
+      <div class="display-val" id="sci-val">0</div>
+    </div>
+    <div class="btns sci">
+      <button class="btn btn-func" onclick="sciFunc('sin')">sin</button>
+      <button class="btn btn-func" onclick="sciFunc('cos')">cos</button>
+      <button class="btn btn-func" onclick="sciFunc('tan')">tan</button>
+      <button class="btn btn-func" onclick="sciFunc('log')">log</button>
+
+      <button class="btn btn-func" onclick="sciFunc('sqrt')">√</button>
+      <button class="btn btn-func" onclick="sciFunc('sq')">x²</button>
+      <button class="btn btn-func" onclick="sciFunc('inv')">1/x</button>
+      <button class="btn btn-func" onclick="sciFunc('pi')">π</button>
+
+      <button class="btn btn-ac" onclick="sAC()">AC</button>
+      <button class="btn btn-clear" onclick="sDel()">⌫</button>
+      <button class="btn btn-op" onclick="sOp('(')">( )</button>
+      <button class="btn btn-op" onclick="sOp('÷')">÷</button>
+
+      <button class="btn btn-num" onclick="sNum('7')">7</button>
+      <button class="btn btn-num" onclick="sNum('8')">8</button>
+      <button class="btn btn-num" onclick="sNum('9')">9</button>
+      <button class="btn btn-op" onclick="sOp('×')">×</button>
+
+      <button class="btn btn-num" onclick="sNum('4')">4</button>
+      <button class="btn btn-num" onclick="sNum('5')">5</button>
+      <button class="btn btn-num" onclick="sNum('6')">6</button>
+      <button class="btn btn-op" onclick="sOp('−')">−</button>
+
+      <button class="btn btn-num" onclick="sNum('1')">1</button>
+      <button class="btn btn-num" onclick="sNum('2')">2</button>
+      <button class="btn btn-num" onclick="sNum('3')">3</button>
+      <button class="btn btn-op" onclick="sOp('+')">+</button>
+
+      <button class="btn btn-func" onclick="sciFunc('ln')">ln</button>
+      <button class="btn btn-num" onclick="sNum('0')">0</button>
+      <button class="btn btn-num" onclick="sNum('.')">.</button>
+      <button class="btn btn-eq" onclick="sEqual()">=</button>
+    </div>
+  </div>
+
+  <!-- ===== EMI CALCULATOR ===== -->
+  <div class="calc-panel" id="panel-emi">
+    <div class="form-calc">
+      <h3>🏦 EMI CALCULATOR</h3>
+      <div class="form-group">
+        <label>Loan Amount (₹)</label>
+        <input type="number" id="emi-principal" placeholder="e.g. 500000" />
+      </div>
+      <div class="form-group">
+        <label>Annual Interest Rate (%)</label>
+        <input type="number" id="emi-rate" placeholder="e.g. 8.5" step="0.1" />
+      </div>
+      <div class="form-group">
+        <label>Loan Tenure (Months)</label>
+        <input type="number" id="emi-months" placeholder="e.g. 60" />
+      </div>
+      <button class="calc-btn" onclick="calcEMI()">CALCULATE EMI</button>
+      <div class="result-box" id="emi-result">
+        <div class="result-row"><span class="result-label">Monthly EMI</span><span class="result-value big" id="emi-monthly"></span></div>
+        <div class="result-row"><span class="result-label">Total Amount</span><span class="result-value" id="emi-total"></span></div>
+        <div class="result-row"><span class="result-label">Total Interest</span><span class="result-value" id="emi-interest"></span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== GST CALCULATOR ===== -->
+  <div class="calc-panel" id="panel-gst">
+    <div class="form-calc">
+      <h3>📊 GST CALCULATOR (India)</h3>
+      <div class="form-group">
+        <label>Amount (₹)</label>
+        <input type="number" id="gst-amount" placeholder="Enter amount" />
+      </div>
+      <div class="form-group">
+        <label>GST Rate</label>
+        <select id="gst-rate">
+          <option value="5">5% (Essential Goods)</option>
+          <option value="12">12% (Standard)</option>
+          <option value="18" selected>18% (Most Services)</option>
+          <option value="28">28% (Luxury)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Calculation Type</label>
+        <select id="gst-type">
+          <option value="add">Add GST (Ex-Tax → Inc-Tax)</option>
+          <option value="remove">Remove GST (Inc-Tax → Ex-Tax)</option>
+        </select>
+      </div>
+      <button class="calc-btn" onclick="calcGST()">CALCULATE GST</button>
+      <div class="result-box" id="gst-result">
+        <div class="result-row"><span class="result-label">Base Amount</span><span class="result-value" id="gst-base"></span></div>
+        <div class="result-row"><span class="result-label">CGST</span><span class="result-value" id="gst-cgst"></span></div>
+        <div class="result-row"><span class="result-label">SGST</span><span class="result-value" id="gst-sgst"></span></div>
+        <div class="result-row"><span class="result-label">Total GST</span><span class="result-value" id="gst-total-tax"></span></div>
+        <div class="result-row"><span class="result-label">Final Amount</span><span class="result-value big" id="gst-final"></span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== AGE CALCULATOR ===== -->
+  <div class="calc-panel" id="panel-age">
+    <div class="form-calc">
+      <h3>🎂 AGE CALCULATOR</h3>
+      <div class="form-group">
+        <label>Date of Birth</label>
+        <input type="date" id="age-dob" />
+      </div>
+      <div class="form-group">
+        <label>Calculate Age On</label>
+        <input type="date" id="age-to" />
+      </div>
+      <button class="calc-btn" onclick="calcAge()">CALCULATE AGE</button>
+      <div class="result-box" id="age-result">
+        <div class="result-row"><span class="result-label">Age</span><span class="result-value big" id="age-main"></span></div>
+        <div class="result-row"><span class="result-label">Total Months</span><span class="result-value" id="age-months"></span></div>
+        <div class="result-row"><span class="result-label">Total Days</span><span class="result-value" id="age-days"></span></div>
+        <div class="result-row"><span class="result-label">Next Birthday</span><span class="result-value" id="age-next"></span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== PERCENTAGE CALCULATOR ===== -->
+  <div class="calc-panel" id="panel-percent">
+    <div class="form-calc">
+      <h3>% PERCENTAGE CALCULATOR</h3>
+      <div class="form-group">
+        <label>Find X% of Y</label>
+        <input type="number" id="pct-x" placeholder="X (Percentage)" />
+        <input type="number" id="pct-y" placeholder="Y (Value)" style="margin-top:8px" />
+      </div>
+      <button class="calc-btn" onclick="calcPct1()">X% of Y</button>
+      <div class="result-box" id="pct-result1">
+        <div class="result-row"><span class="result-label">Result</span><span class="result-value big" id="pct-ans1"></span></div>
+      </div>
+
+      <div style="margin-top:20px; padding-top:16px; border-top:1px solid var(--border)">
+        <div class="form-group">
+          <label>What % is A of B?</label>
+          <input type="number" id="pct-a" placeholder="A (Value)" />
+          <input type="number" id="pct-b" placeholder="B (Total)" style="margin-top:8px" />
+        </div>
+        <button class="calc-btn" onclick="calcPct2()">Find Percentage</button>
+        <div class="result-box" id="pct-result2">
+          <div class="result-row"><span class="result-label">Percentage</span><span class="result-value big" id="pct-ans2"></span></div>
+        </div>
+      </div>
+
+      <div style="margin-top:20px; padding-top:16px; border-top:1px solid var(--border)">
+        <div class="form-group">
+          <label>Marks Calculator (Obtained / Total)</label>
+          <input type="number" id="pct-marks" placeholder="Marks Obtained" />
+          <input type="number" id="pct-total" placeholder="Total Marks" style="margin-top:8px" />
+        </div>
+        <button class="calc-btn" onclick="calcMarks()">Calculate Marks %</button>
+        <div class="result-box" id="pct-result3">
+          <div class="result-row"><span class="result-label">Percentage</span><span class="result-value big" id="pct-ans3"></span></div>
+          <div class="result-row"><span class="result-label">Grade</span><span class="result-value" id="pct-grade"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== BMI CALCULATOR ===== -->
+  <div class="calc-panel" id="panel-bmi">
+    <div class="form-calc">
+      <h3>⚕️ BMI CALCULATOR</h3>
+      <div class="form-group">
+        <label>Weight (kg)</label>
+        <input type="number" id="bmi-weight" placeholder="e.g. 70" step="0.1" />
+      </div>
+      <div class="form-group">
+        <label>Height (cm)</label>
+        <input type="number" id="bmi-height" placeholder="e.g. 170" />
+      </div>
+      <div class="form-group">
+        <label>Age</label>
+        <input type="number" id="bmi-age" placeholder="e.g. 25" />
+      </div>
+      <div class="form-group">
+        <label>Gender</label>
+        <select id="bmi-gender">
+          <option value="M">Male / पुरुष</option>
+          <option value="F">Female / महिला</option>
+        </select>
+      </div>
+      <button class="calc-btn" onclick="calcBMI()">CALCULATE BMI</button>
+      <div class="result-box" id="bmi-result">
+        <div class="result-row"><span class="result-label">Your BMI</span><span class="result-value big" id="bmi-val"></span></div>
+        <div class="result-row"><span class="result-label">Category</span><span class="result-value" id="bmi-cat"></span></div>
+        <div class="result-row"><span class="result-label">Ideal Weight Range</span><span class="result-value" id="bmi-ideal"></span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CURRENCY CALCULATOR ===== -->
+  <div class="calc-panel" id="panel-currency">
+    <div class="form-calc">
+      <h3>💱 CURRENCY CONVERTER</h3>
+      <p style="font-size:0.75rem;color:var(--muted);margin-bottom:12px">* Approximate rates. For live rates, connect to internet.</p>
+      <div class="form-group">
+        <label>Amount</label>
+        <input type="number" id="cur-amount" placeholder="Enter amount" />
+      </div>
+      <div class="form-group">
+        <label>From</label>
+        <select id="cur-from">
+          <option value="INR">INR – Indian Rupee ₹</option>
+          <option value="USD">USD – US Dollar $</option>
+          <option value="EUR">EUR – Euro €</option>
+          <option value="GBP">GBP – British Pound £</option>
+          <option value="AED">AED – UAE Dirham</option>
+          <option value="SAR">SAR – Saudi Riyal</option>
+          <option value="SGD">SGD – Singapore Dollar</option>
+          <option value="CAD">CAD – Canadian Dollar</option>
+          <option value="AUD">AUD – Australian Dollar</option>
+          <option value="JPY">JPY – Japanese Yen ¥</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>To</label>
+        <select id="cur-to">
+          <option value="USD">USD – US Dollar $</option>
+          <option value="INR">INR – Indian Rupee ₹</option>
+          <option value="EUR">EUR – Euro €</option>
+          <option value="GBP">GBP – British Pound £</option>
+          <option value="AED">AED – UAE Dirham</option>
+          <option value="SAR">SAR – Saudi Riyal</option>
+          <option value="SGD">SGD – Singapore Dollar</option>
+          <option value="CAD">CAD – Canadian Dollar</option>
+          <option value="AUD">AUD – Australian Dollar</option>
+          <option value="JPY">JPY – Japanese Yen ¥</option>
+        </select>
+      </div>
+      <button class="calc-btn" onclick="calcCurrency()">CONVERT</button>
+      <div class="result-box" id="cur-result">
+        <div class="result-row"><span class="result-label">Converted Amount</span><span class="result-value big" id="cur-ans"></span></div>
+        <div class="result-row"><span class="result-label">Exchange Rate</span><span class="result-value" id="cur-rate"></span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== HISTORY ===== -->
+  <div class="calc-panel" id="panel-history">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+      <span style="font-family:Orbitron;font-size:0.8rem;color:var(--accent)">📋 CALCULATION HISTORY</span>
+      <button onclick="clearHistory()" style="background:var(--btn-clear);border:1px solid #500;color:var(--red);padding:6px 12px;border-radius:8px;cursor:pointer;font-size:0.75rem;">Clear All</button>
+    </div>
+    <div class="history-panel" id="history-list">
+      <div class="no-history">No calculations yet.<br>History will appear here.</div>
+    </div>
+  </div>
+
+</div><!-- /main -->
+
+<!-- FOOTER -->
+<div class="footer">
+  <span>निर्भय गौतम द्वारा</span> · Nirbhay Gautam · All Rights Reserved<br>
+  निर्भय Calculator – India's Premium All-in-One Calculator
+</div>
+
+<!-- BOTTOM AD (Fixed) -->
+<div class="ad-bottom">
+  <!-- ✅ Google AdSense Ad Unit — REPLACE data-ad-slot -->
+  <!--
+  <ins class="adsbygoogle"
+    style="display:inline-block;width:320px;height:50px"
+    data-ad-client="ca-pub-XXXXXXXXXXXXXXXXX"
+    data-ad-slot="XXXXXXXXXX"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  -->
+  <div class="ad-placeholder">📱 Advertisement · 320×50</div>
+</div>
+
+<script>
+// ============================
+// LOADING SCREEN
+// ============================
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    const loader = document.getElementById('loader');
+    loader.style.opacity = '0';
+    setTimeout(() => loader.style.display = 'none', 500);
+  }, 2200);
+});
+
+// ============================
+// TAB SWITCHER
+// ============================
+function switchTab(id) {
+  document.querySelectorAll('.tab').forEach((t, i) => {
+    t.classList.toggle('active', t.getAttribute('onclick').includes(`'${id}'`));
+  });
+  document.querySelectorAll('.calc-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('panel-' + id).classList.add('active');
+  if (id === 'history') renderHistory();
+}
+
+// ============================
+// HISTORY
+// ============================
+let calcHistory = JSON.parse(localStorage.getItem('nirbhay_calc_history') || '[]');
+
+function saveHistory(expr, result) {
+  calcHistory.unshift({ expr, result, time: new Date().toLocaleTimeString('hi-IN') });
+  if (calcHistory.length > 50) calcHistory.pop();
+  localStorage.setItem('nirbhay_calc_history', JSON.stringify(calcHistory));
+}
+
+function renderHistory() {
+  const list = document.getElementById('history-list');
+  if (!calcHistory.length) {
+    list.innerHTML = '<div class="no-history">No calculations yet.<br>History will appear here.</div>';
+    return;
+  }
+  list.innerHTML = calcHistory.map((h, i) =>
+    `<div class="history-item" onclick="loadHistoryItem(${i})">
+      <div class="h-expr">${h.expr} &nbsp; · &nbsp; ${h.time}</div>
+      <div class="h-result">= ${h.result}</div>
+    </div>`
+  ).join('');
+}
+
+function loadHistoryItem(i) {
+  const h = calcHistory[i];
+  bDisplay.val = h.result;
+  bDisplay.expr = h.expr;
+  updateBasic();
+  switchTab('basic');
+}
+
+function clearHistory() {
+  if (confirm('History clear karein?')) {
+    calcHistory = [];
+    localStorage.removeItem('nirbhay_calc_history');
+    renderHistory();
+  }
+}
+
+// ============================
+// BASIC CALCULATOR
+// ============================
+const bDisplay = { val: '0', expr: '', prevOp: '', prevVal: '', newNum: true };
+
+function updateBasic() {
+  const v = document.getElementById('basic-val');
+  v.textContent = bDisplay.val;
+  v.style.fontSize = bDisplay.val.length > 10 ? '1.4rem' : '';
+  document.getElementById('basic-expr').textContent = bDisplay.expr;
+}
+
+function bNum(n) {
+  if (bDisplay.newNum) { bDisplay.val = n === '.' ? '0.' : n; bDisplay.newNum = false; }
+  else {
+    if (n === '.' && bDisplay.val.includes('.')) return;
+    bDisplay.val = bDisplay.val === '0' && n !== '.' ? n : bDisplay.val + n;
+  }
+  updateBasic();
+}
+
+function bOp(op) {
+  if (op === '%') { bDisplay.val = String(parseFloat(bDisplay.val) / 100); updateBasic(); return; }
+  bDisplay.expr = bDisplay.val + ' ' + op;
+  bDisplay.prevVal = bDisplay.val;
+  bDisplay.prevOp = op;
+  bDisplay.newNum = true;
+  updateBasic();
+}
+
+function bEqual() {
+  if (!bDisplay.prevOp) return;
+  const a = parseFloat(bDisplay.prevVal), b = parseFloat(bDisplay.val);
+  let result;
+  switch (bDisplay.prevOp) {
+    case '+': result = a + b; break;
+    case '−': result = a - b; break;
+    case '×': result = a * b; break;
+    case '÷': result = b !== 0 ? a / b : 'Error'; break;
+    default: result = b;
+  }
+  const expr = `${bDisplay.prevVal} ${bDisplay.prevOp} ${bDisplay.val}`;
+  const res = typeof result === 'number' ? parseFloat(result.toFixed(10)).toString() : result;
+  saveHistory(expr, res);
+  bDisplay.expr = expr + ' =';
+  bDisplay.val = res;
+  bDisplay.prevOp = '';
+  bDisplay.newNum = true;
+  updateBasic();
+}
+
+function bAC() { bDisplay.val = '0'; bDisplay.expr = ''; bDisplay.prevOp = ''; bDisplay.prevVal = ''; bDisplay.newNum = true; updateBasic(); }
+function bDel() {
+  if (bDisplay.newNum) return;
+  bDisplay.val = bDisplay.val.length > 1 ? bDisplay.val.slice(0, -1) : '0';
+  updateBasic();
+}
+
+// ============================
+// SCIENTIFIC CALCULATOR
+// ============================
+const sDisp = { val: '0', expr: '', newNum: true };
+
+function updateSci() {
+  const v = document.getElementById('sci-val');
+  v.textContent = sDisp.val;
+  v.style.fontSize = sDisp.val.length > 10 ? '1.3rem' : '';
+  document.getElementById('sci-expr').textContent = sDisp.expr;
+}
+
+function sNum(n) {
+  if (sDisp.newNum) { sDisp.val = n === '.' ? '0.' : n; sDisp.newNum = false; }
+  else {
+    if (n === '.' && sDisp.val.includes('.')) return;
+    sDisp.val = sDisp.val === '0' && n !== '.' ? n : sDisp.val + n;
+  }
+  updateSci();
+}
+
+let sExprStr = '';
+function sOp(op) {
+  if (op === '( )') {
+    sExprStr += sDisp.val + ' '; sDisp.val = '0'; sDisp.newNum = true; updateSci(); return;
+  }
+  sExprStr += sDisp.val + ' ' + op + ' '; sDisp.newNum = true;
+  document.getElementById('sci-expr').textContent = sExprStr;
+}
+
+function sciFunc(fn) {
+  const n = parseFloat(sDisp.val);
+  let result;
+  switch (fn) {
+    case 'sin': result = Math.sin(n * Math.PI / 180); break;
+    case 'cos': result = Math.cos(n * Math.PI / 180); break;
+    case 'tan': result = Math.tan(n * Math.PI / 180); break;
+    case 'log': result = Math.log10(n); break;
+    case 'ln': result = Math.log(n); break;
+    case 'sqrt': result = Math.sqrt(n); break;
+    case 'sq': result = n * n; break;
+    case 'inv': result = 1 / n; break;
+    case 'pi': result = Math.PI; break;
+    default: result = n;
+  }
+  const res = parseFloat(result.toFixed(10)).toString();
+  sDisp.expr = `${fn}(${sDisp.val})`;
+  sDisp.val = res;
+  sDisp.newNum = true;
+  saveHistory(`${fn}(${n})`, res);
+  updateSci();
+}
+
+function sEqual() {
+  try {
+    const fullExpr = sExprStr + sDisp.val;
+    const safe = fullExpr.replace(/×/g, '*').replace(/÷/g, '/').replace(/−/g, '-');
+    const result = parseFloat(eval(safe).toFixed(10)).toString();
+    saveHistory(fullExpr, result);
+    sDisp.expr = fullExpr + ' =';
+    sDisp.val = result;
+    sExprStr = '';
+    sDisp.newNum = true;
+    updateSci();
+  } catch { sDisp.val = 'Error'; updateSci(); }
+}
+
+function sAC() { sDisp.val = '0'; sDisp.expr = ''; sExprStr = ''; sDisp.newNum = true; updateSci(); }
+function sDel() {
+  if (sDisp.newNum) return;
+  sDisp.val = sDisp.val.length > 1 ? sDisp.val.slice(0, -1) : '0';
+  updateSci();
+}
+
+// ============================
+// EMI CALCULATOR
+// ============================
+function calcEMI() {
+  const P = parseFloat(document.getElementById('emi-principal').value);
+  const r = parseFloat(document.getElementById('emi-rate').value) / 12 / 100;
+  const n = parseInt(document.getElementById('emi-months').value);
+  if (!P || !r || !n) { alert('Sab fields fill karein!'); return; }
+  const emi = P * r * Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1);
+  const total = emi * n;
+  const interest = total - P;
+  const fmt = v => '₹' + Math.round(v).toLocaleString('en-IN');
+  document.getElementById('emi-monthly').textContent = fmt(emi);
+  document.getElementById('emi-total').textContent = fmt(total);
+  document.getElementById('emi-interest').textContent = fmt(interest);
+  document.getElementById('emi-result').classList.add('show');
+}
+
+// ============================
+// GST CALCULATOR
+// ============================
+function calcGST() {
+  const amt = parseFloat(document.getElementById('gst-amount').value);
+  const rate = parseFloat(document.getElementById('gst-rate').value);
+  const type = document.getElementById('gst-type').value;
+  if (!amt) { alert('Amount daalen!'); return; }
+  let base, gstTotal, final;
+  if (type === 'add') { base = amt; gstTotal = base * rate / 100; final = base + gstTotal; }
+  else { final = amt; base = amt / (1 + rate / 100); gstTotal = final - base; }
+  const cgst = gstTotal / 2, sgst = gstTotal / 2;
+  const fmt = v => '₹' + v.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  document.getElementById('gst-base').textContent = fmt(base);
+  document.getElementById('gst-cgst').textContent = fmt(cgst) + ` (${rate/2}%)`;
+  document.getElementById('gst-sgst').textContent = fmt(sgst) + ` (${rate/2}%)`;
+  document.getElementById('gst-total-tax').textContent = fmt(gstTotal);
+  document.getElementById('gst-final').textContent = fmt(final);
+  document.getElementById('gst-result').classList.add('show');
+}
+
+// ============================
+// AGE CALCULATOR
+// ============================
+function calcAge() {
+  const dob = new Date(document.getElementById('age-dob').value);
+  const to = new Date(document.getElementById('age-to').value || Date.now());
+  if (!document.getElementById('age-dob').value) { alert('Date of birth daalen!'); return; }
+  let y = to.getFullYear() - dob.getFullYear();
+  let m = to.getMonth() - dob.getMonth();
+  let d = to.getDate() - dob.getDate();
+  if (d < 0) { m--; d += new Date(to.getFullYear(), to.getMonth(), 0).getDate(); }
+  if (m < 0) { y--; m += 12; }
+  const totalDays = Math.floor((to - dob) / 86400000);
+  const totalMonths = y * 12 + m;
+  const nextBday = new Date(to.getFullYear(), dob.getMonth(), dob.getDate());
+  if (nextBday < to) nextBday.setFullYear(nextBday.getFullYear() + 1);
+  const daysLeft = Math.ceil((nextBday - to) / 86400000);
+  document.getElementById('age-main').textContent = `${y} Years, ${m} Months, ${d} Days`;
+  document.getElementById('age-months').textContent = totalMonths.toLocaleString('en-IN') + ' months';
+  document.getElementById('age-days').textContent = totalDays.toLocaleString('en-IN') + ' days';
+  document.getElementById('age-next').textContent = daysLeft === 0 ? '🎂 Today!' : `${daysLeft} days remaining`;
+  document.getElementById('age-result').classList.add('show');
+}
+
+// Initialize age "to" field with today
+document.getElementById('age-to').value = new Date().toISOString().split('T')[0];
+
+// ============================
+// PERCENTAGE CALCULATOR
+// ============================
+function calcPct1() {
+  const x = parseFloat(document.getElementById('pct-x').value);
+  const y = parseFloat(document.getElementById('pct-y').value);
+  if (isNaN(x) || isNaN(y)) { alert('Values daalen!'); return; }
+  const ans = (x / 100) * y;
+  document.getElementById('pct-ans1').textContent = parseFloat(ans.toFixed(4));
+  document.getElementById('pct-result1').classList.add('show');
+}
+
+function calcPct2() {
+  const a = parseFloat(document.getElementById('pct-a').value);
+  const b = parseFloat(document.getElementById('pct-b').value);
+  if (!a || !b) { alert('Values daalen!'); return; }
+  const ans = (a / b) * 100;
+  document.getElementById('pct-ans2').textContent = parseFloat(ans.toFixed(2)) + '%';
+  document.getElementById('pct-result2').classList.add('show');
+}
+
+function calcMarks() {
+  const obtained = parseFloat(document.getElementById('pct-marks').value);
+  const total = parseFloat(document.getElementById('pct-total').value);
+  if (!obtained || !total) { alert('Marks daalen!'); return; }
+  const pct = (obtained / total) * 100;
+  let grade = pct >= 90 ? 'A+ (Excellent)' : pct >= 80 ? 'A (Very Good)' : pct >= 70 ? 'B (Good)' : pct >= 60 ? 'C (Average)' : pct >= 50 ? 'D (Pass)' : 'F (Fail)';
+  document.getElementById('pct-ans3').textContent = pct.toFixed(2) + '%';
+  document.getElementById('pct-grade').textContent = grade;
+  document.getElementById('pct-result3').classList.add('show');
+}
+
+// ============================
+// BMI CALCULATOR
+// ============================
+function calcBMI() {
+  const weight = parseFloat(document.getElementById('bmi-weight').value);
+  const height = parseFloat(document.getElementById('bmi-height').value) / 100;
+  if (!weight || !height) { alert('Weight aur height daalen!'); return; }
+  const bmi = weight / (height * height);
+  let cat, color;
+  if (bmi < 18.5) { cat = '⚠️ Underweight'; color = '#f59e0b'; }
+  else if (bmi < 25) { cat = '✅ Normal Weight'; color = '#10b981'; }
+  else if (bmi < 30) { cat = '⚠️ Overweight'; color = '#f59e0b'; }
+  else { cat = '🔴 Obese'; color = '#ef4444'; }
+  const minW = (18.5 * height * height).toFixed(1);
+  const maxW = (24.9 * height * height).toFixed(1);
+  document.getElementById('bmi-val').textContent = bmi.toFixed(1);
+  const catEl = document.getElementById('bmi-cat');
+  catEl.textContent = cat; catEl.style.color = color;
+  document.getElementById('bmi-ideal').textContent = `${minW} kg – ${maxW} kg`;
+  document.getElementById('bmi-result').classList.add('show');
+}
+
+// ============================
+// CURRENCY CALCULATOR
+// ============================
+const FX = { INR:1, USD:83.5, EUR:91.2, GBP:106.8, AED:22.7, SAR:22.3, SGD:62.4, CAD:61.5, AUD:55.8, JPY:0.56 };
+
+function calcCurrency() {
+  const amt = parseFloat(document.getElementById('cur-amount').value);
+  const from = document.getElementById('cur-from').value;
+  const to = document.getElementById('cur-to').value;
+  if (!amt) { alert('Amount daalen!'); return; }
+  const inr = amt * FX[from];
+  const result = inr / FX[to];
+  const rate = FX[from] / FX[to];
+  document.getElementById('cur-ans').textContent = result.toFixed(4) + ' ' + to;
+  document.getElementById('cur-rate').textContent = `1 ${from} = ${rate.toFixed(4)} ${to}`;
+  document.getElementById('cur-result').classList.add('show');
+}
+
+// Keyboard support for basic calc
+document.addEventListener('keydown', e => {
+  const panel = document.querySelector('.calc-panel.active');
+  if (!panel || panel.id !== 'panel-basic') return;
+  if ('0123456789.'.includes(e.key)) bNum(e.key);
+  else if (e.key === '+') bOp('+');
+  else if (e.key === '-') bOp('−');
+  else if (e.key === '*') bOp('×');
+  else if (e.key === '/') { e.preventDefault(); bOp('÷'); }
+  else if (e.key === 'Enter' || e.key === '=') bEqual();
+  else if (e.key === 'Backspace') bDel();
+  else if (e.key === 'Escape') bAC();
+});
+</script>
+</body>
+</html>
+
